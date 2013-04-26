@@ -2,4 +2,4 @@
 *.swp
 *.sqlite
 .DS_Store
-shortener/settings_local.py
+shortener/shortener/settings_local.py
