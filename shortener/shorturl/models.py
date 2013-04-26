@@ -37,7 +37,8 @@ class Link(models.Model):
     hash_url = models.CharField(
         u'Hash da URL',
         max_length=32,
-        db_index=True
+        db_index=True,
+        editable=False
     )
     
     users = models.ManyToManyField(
