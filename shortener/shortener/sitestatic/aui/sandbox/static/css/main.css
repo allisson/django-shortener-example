@@ -1,0 +1,208 @@
+/* ----- Generic stuff ----- */
+.hidden {
+	display: none !important;
+}
+
+/* ----- End generic stuff ----- */
+
+/* ----- Top header ----- */
+.aui-header-logo-device {
+	display: block;
+	padding: 8px 0;
+	background-image: url('../img/logo.png');
+	text-indent: -9999px;
+	width: 92px;
+	background-size: 92px;
+	background-position: 0 50%;
+	background-repeat: no-repeat; 
+}
+
+.aui-header .aui-button.aui-button-primary.aui-style {
+	margin-left: 0;
+}
+
+.aui-nav .aui-lozenge {
+	margin-top: 13px;
+}
+
+#header .right-toolbar {
+    float: right;
+}
+
+#save-wait-icon {
+	display: none;
+}
+
+#wait-icon-container {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	padding: 5px 0;
+	margin-top: 10px;
+	/* custom position of wait icon closer to the toolbar */
+	margin-left: -10px;
+}
+
+#toggle-bar .right-toolbar {
+    float: right;
+    padding: 0 10px;
+}
+
+#toggle-bar {
+	text-align: center;
+	margin: 0;
+}
+
+#toggle-bar .aui-toolbar2-primary {
+	display: inline-block;
+}
+
+/* ----- End Top header ----- */
+
+/* ----- Second header ----- */
+
+/* ----- End Second header ----- */
+
+/* ----- Main content ----- */
+#content .ace-editor {
+	height: 100%;
+	position: relative;	
+}
+
+#content {
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#content-container{
+	position:absolute;
+}
+
+#content .stretch {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	border-right: 1px solid #CCC;
+}
+
+#content .stretch h5 {
+	padding-left: 10px;
+	padding: 5px 10px;
+}
+
+#content .left-nav {
+	left: 0;	
+	overflow-x: hidden;	
+	border: none;
+}
+
+#content .preview-panel .section-header a.aui-button-link {
+	float: right;
+	margin-right: 10px;
+}
+
+#panel-switcher-toolbar{
+	float: none;
+	display: inline-block;
+}
+
+#run-javascript-toolbar{
+	display: inline-block;
+	float: right;
+}
+
+#theme-switcher-link-leading .aui-icon {
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	color: #999;
+}
+
+#theme-switcher-link-leading li a.active ~ .aui-icon{
+	color: #fff;
+}
+
+#theme-switcher-link-leading li {
+	position: relative;
+}
+
+#preview-panel{
+	background: #f5f5f5;
+}
+
+.splitter-handle {
+	cursor: col-resize;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5px;
+	z-index: 9999;
+}
+
+.splitter-handle:hover {
+	background: #eee;
+}
+
+.stretch .section-header {
+	position: absolute;
+	width: 100%;
+	padding-top: 2px;
+}
+
+.stretch .section-header h5,
+.stretch .section-header button {
+	display: inline-block;
+}
+
+.stretch .section-content {
+	box-sizing: border-box;
+	height: 100%;
+	padding-top: 30px;
+}
+
+.stretch.preview-panel .section-content {
+	padding: 30px 10px 10px;
+}
+
+.aui-navgroup .aui-nav .active {
+	font-weight: bold;
+}
+
+.snippet-link .remove-snippet-icon{
+
+	display: inline-block;
+	color: #707070;
+	margin: 1px 5px;
+}
+
+.snippet-link .remove-snippet-icon:hover {
+	color: #333;
+}
+
+.remove-snippet-icon.hidden{
+	display: none;
+}
+
+/* ----- End Main content ----- */
+
+/* ----- Output ----- */
+#output-frame {
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+/* ----- End Output ----- */
+
+#hidden-stuff{
+	display: none;
+}
+
+#publish-button{
+	width: 120px;
+}
+
+#sandbox-content-area{
+	position: relative;
+}

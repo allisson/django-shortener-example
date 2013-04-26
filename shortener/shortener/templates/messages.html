@@ -1,0 +1,23 @@
+{% for message in messages %}
+<div class="aui-message closeable shadowed {{ message.tags }}">
+  
+  <p class="title">{{ message }}</p>
+  
+  {% if message.tags == 'error' %}
+  <span class="aui-icon aui-icon-small aui-iconfont-error" style="color:#fff;"></span>
+  {% endif %}
+  
+  {% if message.tags == 'success' %}
+  <span class="aui-icon aui-icon-small aui-iconfont-approve" style="color:#14892c;"></span>
+  {% endif %}
+  
+  {% if message.tags ==  'info' %}
+  <span class="aui-icon aui-icon-small aui-iconfont-info" style="color:#4a6785;"></span>
+  {% endif%}
+
+  {% if message.tags ==  'warning' %}
+  <span class="aui-icon icon-warning"></span>
+  {% endif%}
+  
+</div> 
+{% endfor %}

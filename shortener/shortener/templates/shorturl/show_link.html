@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Detalhes do Link #{{ link.id }}{% endblock %}
+
+
+{% block body_class %}aui-page-focused aui-page-focused-medium{% endblock %}
+
+
+{% block content %}
+<section id="content" role="main">
+  <div class="aui-page-panel margin-fix">
+    <div class="aui-page-panel-inner">
+      <section class="aui-page-panel-content">
+        <h2>Detalhes do Link #{{ link.id }}</h2>
+        <p>
+          <strong>URL original:</strong> 
+          <a href="{{ link.url }}" target="_blank">{{ link.url }}</a>
+        </p>
+        <p>
+          <strong>URL encurtada:</strong> 
+          <a href="{{ link.get_short_url }}" target="_blank">{{ link.get_short_url }}</a>
+        </p>
+      </section><!-- .aui-page-panel-content -->
+    </div><!-- .aui-page-panel-inner -->
+  </div><!-- .aui-page-panel -->
+</section><!-- #content -->
+{% endblock %}

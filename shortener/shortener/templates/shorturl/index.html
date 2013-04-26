@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Bem vindo{% endblock %}
+
+
+{% block content %}
+<header class="aui-page-header">
+  <div class="aui-page-header-inner">
+    <div class="aui-page-header-main">
+      <h1>Bem vindo ao Django Shortener!</h1>
+    </div>
+  </div>
+</header>
+<div class="aui-page-panel">
+  <div class="aui-page-panel-inner">
+    <section class="aui-page-panel-content">
+      <p>
+        Essa é uma aplicação bastante simples de encurtamento de urls usando o framework Django.
+      </p>
+      <p>
+        As urls são encurtadas transformando o id do model Link para um número da base 62.
+      </p>
+    </section>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=EDGE" http-equiv="X-UA-Compatible">
+
+  <title>{% block title %}{% endblock %} - Django Shortener</title>
+  
+  <link href="{% static "site/aui/css/aui-all.css" %}" media="all" rel="stylesheet">
+  <!--[if lt IE 9]><link rel="stylesheet" href="{% static "site/aui/css/aui-ie.css" %}" media="all"><![endif]-->
+  <!--[if IE 9]><link rel="stylesheet" href="{% static "site/aui/css/aui-ie9.css" %}" media="all"><![endif]-->
+  {% block extrahead %}{% endblock %}
+</head>
+
+<body class="aui-layout aui-theme-default {% block body_class %}{% endblock %}" id="aui-flatpack">
+  
+  <div id="page">
+
+    <header id="header" role="banner">
+      <!-- App Header goes inside #header -->
+      {% include 'messages.html' %}
+      <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+
+        <div class="aui-header-inner">
+          
+          <div class="aui-header-primary">
+            <ul class="aui-nav">
+              <li>
+                <a href="/">Django Shortener</a>
+              </li>
+              <li>
+                <a class="aui-button aui-button-primary aui-style" href="{% url 'shorturl_add_link' %}">Encurtar Link</a>
+              </li>
+            </ul>
+          </div>
+
+          {% if user.is_authenticated %}
+          <div class="aui-header-secondary">
+            <ul class="aui-nav">
+              <li>
+                <a href="#dropdown2-header-bb-user" aria-owns="dropdown2-header-bb-user" aria-haspopup="true" class="aui-dropdown2-trigger" aria-controls="dropdown2-header-bb-user">
+                  <div class="aui-avatar aui-avatar-small">
+                    <div class="aui-avatar-inner">
+                      <img src="{% static "site/aui/docimg/user-avatar-blue-24@2x.png" %}" alt="{{ user.username }}">
+                    </div>
+                  </div>
+                </a>
+                <div class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" id="dropdown2-header-bb-user" style="display: none; top: 40px; min-width: 160px; left: 1213px;" aria-hidden="true">
+                  <div class="aui-dropdown2-section">
+                    <ul>
+                      <li>
+                        <a href="{% url 'shorturl_my_links' %}">Meus Links</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="aui-dropdown2-section">
+                    <ul>
+                      <li><a href="{% url 'accounts_logout' %}">Sair</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {% else %}
+          <div class="aui-header-secondary">
+            <ul class="aui-nav">
+              <li>
+                <a class="aui-button aui-button-primary aui-style" href="{% url 'accounts_register' %}">Cadastre-se</a>
+              </li>
+              <li>
+                <a href="{% url 'accounts_login' %}">Entrar</a>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+    </nav>
+
+    <!-- App Header goes inside #header -->  
+  </header>
+
+    <section id="content" role="main">
+    {% block content %}{% endblock %}
+    </section><!-- #content -->
+
+    <footer id="footer">
+      <section class="footer-body">
+        <ul id="aui-footer-list">
+          <li><a href="http://allissonazevedo.com">Blog</a></li>
+          <li><a href="http://facebook.com/allissonazevedo">Facebook</a></li>
+          <li><a href="http://twitter.com/allisson">Twitter</a></li>
+          <li><a href="http://br.linkedin.com/in/allisson/">Linkedin</a></li>
+          <li><a href="http://github.com/allisson/">Github</a></li>
+        </ul>
+      </section>
+    </footer><!-- #footer -->
+  </div><!-- #page -->
+
+
+  <script src="{% static "site/aui/js/aui-all.js" %}"></script>
+  <!--[if lt IE 9]><script src="{% static "site/aui/js/aui-ie.js" %}"></script><![endif]-->
+  {% block extrajs %}{% endblock %}
+</body>
+</html>

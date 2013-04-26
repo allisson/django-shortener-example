@@ -1,0 +1,5 @@
+*.pyc
+*.swp
+*.sqlite
+.DS_Store
+shortener/settings_local.py

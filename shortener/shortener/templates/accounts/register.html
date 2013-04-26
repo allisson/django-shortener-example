@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Cadastre-se{% endblock %}
+
+
+{% block body_class %}aui-page-focused aui-page-focused-medium{% endblock %}
+
+
+{% block content %}
+<section id="content" role="main">
+  <div class="aui-page-panel margin-fix">
+    <div class="aui-page-panel-inner">
+      <section class="aui-page-panel-content">
+        <h2>Cadastre-se</h2>
+        <form action="." method="post" class="aui">
+          <fieldset>
+          {% csrf_token %}
+          {% include 'form_snippet.html' with form=form %}
+          </fieldset>
+          <div class="buttons-container">
+            <div class="buttons">
+              <input class="aui-button aui-button-primary" type="submit" id="submit" name="submit" value="Criar conta">
+              <a id="cancel" class="aui-button aui-button-link" name="cancel" accesskey="c" href="{% url 'shorturl_index' %}">Cancelar</a>
+            </div>
+          </div>
+        </form>
+      </section><!-- .aui-page-panel-content -->
+    </div><!-- .aui-page-panel-inner -->
+  </div><!-- .aui-page-panel -->
+</section><!-- #content -->
+{% endblock %}

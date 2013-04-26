@@ -1,0 +1,24 @@
+{% if form.non_field_errors %}
+  {% for error in form.non_field_errors %}
+    <div class="aui-message closeable shadowed error">
+      <p class="title">{{ error }}</p>
+      <span class="aui-icon aui-icon-small aui-iconfont-error" style="color:#fff;"></span>
+    </div>
+  {% endfor %}
+  <br />
+{% endif %}
+
+{% for field in form %}
+<div class="field-group">
+  <label for="{{ field.html_name }}">{{ field.label }}{% if field.field.required %}<span class="aui-icon icon-required"> required</span>{% endif %}</label>
+  {{ field }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+    <div class="error">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  {% if field.help_text %}
+  <div class="description">{{ field.help_text }}</div>
+  {% endif %}
+</div>
+{% endfor %}
