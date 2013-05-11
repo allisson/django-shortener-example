@@ -128,6 +128,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    # external apps
+    'gunicorn',
     # local apps
     'accounts',
     'shorturl',
